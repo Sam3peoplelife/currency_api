@@ -15,7 +15,7 @@ import (
 //</summary>
 func sendEmail(to, subject, body string) error {
     m := gomail.NewMessage()
-    m.SetHeader("From", "your-email@example.com")
+    m.SetHeader("From", "myemail@example.com")
     m.SetHeader("To", to)
     m.SetHeader("Subject", subject)
     m.SetBody("text/html", body)

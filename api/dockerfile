@@ -1,13 +1,18 @@
 FROM golang:latest
 
-RUN go get -u github.com/gorilla/mux
-RUN go get -u gorm.io/gorm
-RUN go get -u github.com/mattn/go-sqlite3
-RUN go get -u gopkg.in/gomail.v2
-RUN go get -u github.com/robfig/cron/v3
-
-COPY . /app
-
 WORKDIR /app
 
-CMD ["go", "run", "main.go", "handlers.go"]
+COPY . .
+
+RUN go get -u github.com/gorilla/mux
+RUN go get -u gorm.io/gorm
+RUN go get -u gorm.io/driver/sqlite
+RUN go get -u gopkg.in/gomail.v2
+RUN go get -u github.com/robfig/cron/v3
+RUN go get github.com/stretchr/testify
+
+RUN go build -o currency_exchange .
+
+EXPOSE 8080
+
+CMD ["./currency_exchange"]
