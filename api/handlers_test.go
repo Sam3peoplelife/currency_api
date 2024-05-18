@@ -4,6 +4,7 @@ import (
     "net/http"
     "net/http/httptest"
     "testing"
+	"api/utils"
 
     "github.com/stretchr/testify/assert"
 )
@@ -12,7 +13,7 @@ import (
 //Testing fetchExchangeRate function
 //</summary>
 func TestFetchExchangeRate(t *testing.T) {
-    rate, err := fetchExchangeRate()
+    rate, err := utils.FetchExchangeRate()
     assert.NoError(t, err)
     assert.Greater(t, rate, 0.0, "The exchange rate should be greater than 0")
 }

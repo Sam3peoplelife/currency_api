@@ -10,6 +10,10 @@
     <div class="container">
         <h1>Current USD to UAH Exchange Rate</h1>
         <p>The current exchange rate is: <strong>{{ . }}</strong> UAH for 1 USD.</p>
+        <form action="/subscribe" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
     </div>
 </body>
 </html>
