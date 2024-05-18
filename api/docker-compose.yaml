@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3'
 services:
   currency_api:
     build: .
@@ -7,6 +7,6 @@ services:
     depends_on:
       - db
   db:
-    image: "sqlite:latest"
+    image: "busybox"
     volumes:
       - ./data:/data
