@@ -1,0 +1,13 @@
+FROM golang:latest
+
+RUN go get -u github.com/gorilla/mux
+RUN go get -u gorm.io/gorm
+RUN go get -u github.com/mattn/go-sqlite3
+RUN go get -u gopkg.in/gomail.v2
+RUN go get -u github.com/robfig/cron/v3
+
+COPY . /app
+
+WORKDIR /app
+
+CMD ["go", "run", "main.go", "handlers.go"]
