@@ -34,6 +34,6 @@ api/
 |-- go.sum
 |-- handlers_test.go
 |-- Dockerfile
+|-- docker-compose.yml
 |-- README.md
-docker-compose.yml
 ```
