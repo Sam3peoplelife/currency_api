@@ -15,7 +15,7 @@
 ## Структура проекту
 
 ```
-currency-exchange/
+api/
 |-- main.go
 |-- handlers.go
 |-- migrations/
